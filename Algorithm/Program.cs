@@ -1,7 +1,14 @@
 ﻿// See https://aka.ms/new-console-template for more information
-using Algorithm;
+using Algorithm.DataStructure;
 
-int[] array = Tool.GenerateRandomArray(10);
-Console.WriteLine(string.Join(',', array));
-Tool.Partition(array, 0, array.Length - 1);
-Console.WriteLine(string.Join(',', array));
+var priorityQueue = new PriorityQueue<string>();
+for (int i = 0; i < 100; i++)
+{
+    int val = Random.Shared.Next(1, 50);
+    priorityQueue.Enqueue(val.ToString(), val);
+}
+
+for (int i = 0; i < 100; i++)
+{
+    Console.WriteLine(priorityQueue.Dequeue());
+}
