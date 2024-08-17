@@ -4,6 +4,7 @@
     /// 時間複雜度: N log N
     /// 外部排序
     /// 穩定排序
+    /// 後序走訪
     /// </summary>
     public class MergeSort
     {

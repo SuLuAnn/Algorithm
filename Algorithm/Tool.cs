@@ -62,9 +62,10 @@
         /// <param name="array"></param>
         /// <param name="l">最左邊的 index</param>
         /// <param name="r">最右邊的 index, 分割基準數</param>
-        public static void Partition(int[] array, int l, int r)
+        /// <returns>分割基準值</returns>
+        public static int Partition(int[] array, int l, int r)
         {
-            int edge = 0;
+            int edge = l;
             for (int i = l; i < r; i++)
             {
                 if (array[i] < array[r])
@@ -75,6 +76,7 @@
             }
 
             Swap(array, edge, r);
+            return edge;
         }
 
         /// <summary>
