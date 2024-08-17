@@ -104,19 +104,18 @@
             int[] copy = new int[array.Length];
             array.CopyTo(copy, 0);
             Reverse(copy, m, r);
-            int index = l;
-            r--;
-            while (l <= r)
+            int left = l;
+            int right = r - 1;
+            for (int i = l; i < r; i++)
             {
-                if (copy[l] < copy[r])
+                if (copy[left] < copy[right])
                 {
-                    array[index] = copy[l++];
+                    array[i] = copy[left++];
                 }
                 else
                 {
-                    array[index] = copy[r--];
+                    array[i] = copy[right--];
                 }
-                index++;
             }
         }
     }
